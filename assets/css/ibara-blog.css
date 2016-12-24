@@ -1,0 +1,65 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 18px;
+}
+img {
+    max-height: initial;
+}
+main {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+.PostHeader {
+    margin-bottom: 2.5rem;
+}
+.PostHeader > .meta {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    border-left: 0.25rem solid #007acc;
+    padding: 0 0.65rem;
+    background: rgba(127, 127, 127, 0.1);
+}
+.PostHeader > .meta time {
+    float: right;
+}
+a._home {
+    font-size: 2rem;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: calc(18px - 0.5rem) solid #fff;
+}
+a._home:hover {
+    text-decoration: none;
+    background: #007acc;
+}
+a._home > svg {
+    fill: #007acc;
+}
+a._home:hover> svg {
+    fill: #fff;
+}
+.Posts {
+    list-style-type: none;
+}
+.Posts > li + li {
+    margin-top: 1rem;
+}
+.Posts > li > time {
+    color: #666;
+}
+@media(min-width: 768px) {
+    a._home {
+        border-left: 0;
+    }
+}
