@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+</head>
+<body>
+    <a class="_home" href="/">
+        <svg viewBox="0 0 54 54">
+            <path d="M 43,35 31,23 31,47 23,47 23,23 11,35 11,23 27,7 43,23 Z" />
+        </svg>
+    </a>
+    <main>
+        <article>
+            <header class="PostHeader">
+                <h1>{{ site.title | default: site.github.repository_name }}</h1>
+            </header>
+            {{ content }}
+        </article>
+</body>
+</html>
