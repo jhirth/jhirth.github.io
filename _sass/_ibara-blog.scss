@@ -1,0 +1,133 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 18px;
+}
+img {
+    max-height: initial;
+}
+main {
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    > article {
+        flex: 1;
+    }
+    > footer {
+        margin-top: 2rem;
+        opacity: 0.5;
+        font-size: 0.75rem;
+        line-height: 1;
+        text-align: center;
+    }
+}
+.PostHeader {
+    margin-bottom: 2rem;
+    &:not(:first-child) {
+        margin-top: 2rem;
+    }
+    > .meta {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+        border-left: 0.25rem solid #007acc;
+        padding: 0 0.65rem;
+        background: rgba(127, 127, 127, 0.1);
+        time {
+            float: right;
+        }
+    }
+    &._compact {
+        margin-bottom: 1rem;
+    }
+}
+a._home {
+    font-size: 2rem;
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    text-align: center;
+    line-height: 3rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-left: calc(18px - 0.5rem) solid #fff;
+    &:hover {
+        text-decoration: none;
+        background: #007acc;
+        > svg {
+            fill: #fff;
+        }
+    }
+    > svg {
+        fill: #007acc;
+    }
+}
+
+.Posts {
+    list-style-type: none;
+    > li + li {
+        margin-top: 1rem;
+    }
+    > li > time {
+        color: #666;
+    }
+}
+.Email {
+    &::before {
+        display: inline;
+        content: '🖂 ' attr(data-user);
+    }
+    &::after {
+        display: inline;
+        content: attr(data-domain);
+    }
+}
+.Pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    cursor: default;
+    &:not(:first-child) {
+        margin-top: 2rem;
+    }
+    > li {
+        display: inline-block;
+        > a {
+            display: block;
+            border: 1px solid currentColor;
+            height: 1.5rem;
+            width: 1.5rem;
+            text-align: center;
+            line-height: 1.5rem;
+            &:hover {
+                background: #007acc;
+                border-color: #007acc;
+                color: #fff;
+                text-decoration: none;
+            }
+            > .screenreader {
+                display: none;
+            }
+        }
+        &.disabled > a {
+            color: #ccc;
+            pointer-events: none;
+        }
+        &.active > a {
+            color: inherit;
+            pointer-events: none;
+        }
+    }
+}
+@media(min-width: 768px) {
+    a._home {
+        border-left: 0;
+    }
+}

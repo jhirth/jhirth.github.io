@@ -1,1 +1,54 @@
-theme: jekyll-theme-cayman
+# theme: jekyll-theme-cayman
+
+# tag voodoo
+# http://www.minddust.com/post/alternative-tags-and-categories-on-github-pages/
+collections:
+  my_tags:
+    output: true
+    permalink: /tag/:name/
+
+exclude: [Gemfile, readme.md]
+
+markdown:    kramdown
+highlighter: rouge
+excerpt_separator: "\n\n\n"
+
+gems:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-feed
+
+permalink: /:year-:month-:day/:slug
+paginate: 5
+paginate_path: '/page/:num/'
+timezone: Europe/Berlin
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  -
+    scope:
+      path: ""
+      type: my_tags
+    values:
+      layout: blog_by_tag
+  -
+    scope:
+      path: "project"
+    values:
+      layout: project
+
+sass:
+  style: compressed
+
+title: "@jhirth's .noplan"

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<header class="PostHeader">
+    <h1>{{ page.title | default: site.title }}</h1>
+</header>
+
+{% if paginator.posts %}
+  {% for post in paginator.posts %}
+    {% assign category = site.my_categories | where: "slug", post.category %}
+    {% assign category = category[0] %}
+    {% if post.tags.size > 0 %}
+      {% capture meta %} on {% endcapture %}
+      {% for post_tag in post.tags %}
+        {% assign tag = site.my_tags | where: "slug", post_tag %}
+        {% if tag %}
+          {% assign tag = tag[0] %}
+          {% capture meta_temp %}{{ meta }}<a href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+          {% assign meta = meta_temp %}
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    <div class="PostHeader _compact">
+      <h2><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h2>
+      <p class="meta">
+        {{ meta }}
+        <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
+      </p>
+    </div>
+    {{ post.excerpt }}
+    <p><a href="{{ post.url }}">Read more</a> ({{ post.content | number_of_words }} words)</p>
+  {% endfor %}
+{% else %}
+  <p>No posts found.</p>
+{% endif %}
+
+{% if paginator.total_pages > 1 %}
+  <ul class="Pagination">
+    <li{% unless paginator.previous_page %} class="disabled"{% endunless %}>
+      <a href="{% if paginator.previous_page == 1 %}/{% else %}{{ paginator.previous_page_path }}{% endif %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="screenreader">Previous</span>
+      </a>
+    </li>
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <li class="active"><a href="#">{{ page }} <span class="screenreader">(current)</span></a></li>
+      {% elsif page == 1 %}
+        <li class=""><a href="/">1</a></li>
+      {% else %}
+        <li class=""><a href="{{ site.paginate_path | replace: ':num', page }}">{{ page }}</a></li>
+      {% endif %}
+    {% endfor %}
+    <li{% unless paginator.next_page %} class="disabled"{% endunless %}>
+      <a href="{% if paginator.next_page %}{{ paginator.next_page_path }}{% else %}#{% endif %}" aria-label="Next">
+        <span class="screenreader">Next</span>
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+{% endif %}
