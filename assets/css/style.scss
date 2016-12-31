@@ -4,7 +4,7 @@
 /* ································································· Markdown */
 body {
     color: #444;
-    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, sans-serif;
+    font-family: 'Segoe WPC', 'Segoe UI', SFUIText-Light, HelveticaNeue-Light, 'Liberation Sans', sans-serif;
     font-size: 1rem;
     line-height: 1.4;
 }
@@ -36,7 +36,7 @@ h5,
 h6 {
     font-weight: normal;
     color: #111;
-    line-height: 1.2;
+    line-height: normal;
     margin: 1em 0 0;
 }
 h1:first-child,
@@ -155,11 +155,14 @@ table > tbody > tr + tr > td {
     border-top: 1px solid rgba(0, 0, 0, 0.18);
 }
 code {
+    font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', 'Liberation Mono', monospace;
+    border-radius: 0.25rem;
+
+}
+p code {
     color: #000;
-    font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', monospace;
     background: rgba(127, 127, 127, 0.1);
     padding: 0 0.25rem;
-    border-radius: 0.25rem;
 }
 pre {
     white-space: pre;
@@ -169,7 +172,7 @@ pre:not(:first-child) {
     margin-top: 1rem;
 }
 pre > code {
-    font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', monospace;
+    font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', 'Liberation Mono', monospace;
     background: rgba(127, 127, 127, 0.05);
     display: block;
     padding: 0.65rem 1rem;
@@ -192,9 +195,25 @@ main {
     max-width: 800px;
     margin: 0 auto;
     padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main > article {
+    flex: 1;
+}
+main > footer {
+    margin-top: 2rem;
+    opacity: 0.5;
+    font-size: 0.75rem;
+    line-height: 1;
+    text-align: center;
 }
 .PostHeader {
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
+}
+.PostHeader:not(:first-child) {
+    margin-top: 2rem;
 }
 .PostHeader > .meta {
     font-size: 0.75rem;
@@ -205,6 +224,9 @@ main {
 }
 .PostHeader > .meta time {
     float: right;
+}
+.PostHeader._compact {
+    margin-bottom: 1rem;
 }
 a._home {
     font-size: 2rem;
@@ -237,8 +259,54 @@ a._home:hover> svg {
 .Posts > li > time {
     color: #666;
 }
+.Email::before {
+    display: inline;
+    content: '🖂 ' attr(data-user);
+}
+.Email::after {
+    display: inline;
+    content: attr(data-domain);
+}
 @media(min-width: 768px) {
     a._home {
         border-left: 0;
+    }
+}
+.Pagination {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    cursor: default;
+    &:not(:first-child) {
+        margin-top: 2rem;
+    }
+    > li {
+        display: inline-block;
+        > a {
+            display: block;
+            border: 1px solid currentColor;
+            height: 1.5rem;
+            width: 1.5rem;
+            text-align: center;
+            line-height: 1.5rem;
+            &:hover {
+                background: #007acc;
+                border-color: #007acc;
+                color: #fff;
+                text-decoration: none;
+            }
+            > .screenreader {
+                display: none;
+            }
+        }
+        &.disabled > a {
+            color: #ccc;
+            pointer-events: none;
+        }
+        &.active > a {
+            color: inherit;
+            pointer-events: none;
+        }
     }
 }
