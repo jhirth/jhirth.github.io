@@ -45,8 +45,17 @@ main {
     &._compact {
         margin-bottom: 1rem;
     }
+    &._list {
+        margin-bottom: 0;
+        &:not(:first-child) {
+            margin-top: 0.5rem;
+        }
+        > .meta {
+            margin-top: 0;
+        }
+    }
 }
-a._home {
+.Up {
     font-size: 2rem;
     display: block;
     width: 3rem;
@@ -68,14 +77,11 @@ a._home {
         fill: #007acc;
     }
 }
-
 .Posts {
     list-style-type: none;
-    > li + li {
-        margin-top: 1rem;
-    }
-    > li > time {
-        color: #666;
+    padding: 0;
+    &:not(:first-child) {
+        margin-top: 0;
     }
 }
 .Email {
@@ -130,4 +136,18 @@ a._home {
     a._home {
         border-left: 0;
     }
+}
+// Rouge adds a wrapper div.
+.highlighter-rouge:not(:first-child) {
+    margin-top: 1rem;
+}
+// .highlight span::after { display: inline; content: '[' attr(class) ']' }
+code {
+    .k, .kc, .kd, .kr { color: #b000db }
+    .s { color: #1f0fff }
+    .n, .na, .nb { color: #001080 }
+    .s1, .s2, .sr, .nd, .nt { color: #a31523 }
+    .m, .mi { color: #09885a }
+    .c, .c1, .cm { color: #008000 }
+    .nl { color: #f00 }
 }

@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en-us">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,19 +8,15 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css?v=' | append: site.github.build_revision | relative_url }}">
     {% feed_meta %}
 </head>
-
 <body>
-    <a class="_home" href="/">
-        <svg viewBox="0 0 54 54"><path d="M 43,35 31,23 31,47 23,47 23,23 11,35 11,23 27,7 43,23 Z"/></svg>
-    </a>
+    {% if page.url != '/'
+        %}<a class="Up" href="../" title="go up"><svg viewBox="0 0 54 54"><path d="M 43,35 31,23 31,47 23,47 23,23 11,35 11,23 27,7 43,23 Z"/></svg></a>{%
+    endif %}
     <main>
-        <article>
-            {{ content }}
-        </article>
-        <footer>
-            © Jos Hirth, 2016-2017 &ndash; <a href="/imprint/">Imprint</a>
-        </footer>
+        <article>{{
+            content
+        }}</article>
+        <footer>© Jos Hirth, 2016-2017 &ndash; <a href="/imprint">Imprint</a></footer>
     </main>
 </body>
-
 </html>

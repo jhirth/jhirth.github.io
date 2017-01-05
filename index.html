@@ -29,7 +29,12 @@ layout: default
       </p>
     </div>
     {{ post.excerpt }}
-    <p><a href="{{ post.url }}">Read more</a> ({{ post.content | number_of_words }} words)</p>
+    {% if post.excerpt.size < post.content.size %}
+      {% assign excerpt_words = post.excerpt | number_of_words %}
+      <p><a href="{{ post.url }}">Read more</a> (+{{ post.content | number_of_words | minus: excerpt_words }} words)</p>
+    {% else %}
+      <p><a href="{{ post.url }}">Permalink</a></p>
+    {% endif %}
   {% endfor %}
 {% else %}
   <p>No posts found.</p>

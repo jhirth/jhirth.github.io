@@ -43,7 +43,6 @@ h5:first-child,
 h6:first-child {
     margin-top: 0;
 }
-h4,
 h5,
 h6 {
     font-weight: bold;
@@ -153,7 +152,6 @@ table > tbody > tr + tr > td {
 code {
     font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', 'Liberation Mono', monospace;
     border-radius: 0.25rem;
-
 }
 p code {
     color: #000;
@@ -168,6 +166,7 @@ pre:not(:first-child) {
     margin-top: 1rem;
 }
 pre > code {
+    color: #000;
     font-family: Menlo, Monaco, Consolas, 'Droid Sans Mono', 'Courier New', 'Liberation Mono', monospace;
     background: rgba(127, 127, 127, 0.05);
     display: block;
