@@ -8,7 +8,7 @@ html {
 img {
     max-height: initial;
 }
-main {
+body {
     box-sizing: border-box;
     max-width: 800px;
     margin: 0 auto;
@@ -16,7 +16,7 @@ main {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    > article {
+    > main {
         flex: 1;
     }
     > footer {
@@ -38,11 +38,11 @@ main {
         border-left: 0.25rem solid #007acc;
         padding: 0 0.65rem;
         background: rgba(127, 127, 127, 0.1);
-        time {
+        > time {
             float: right;
         }
     }
-    &._compact {
+    &._excerpt {
         margin-bottom: 1rem;
     }
     &._list {
@@ -77,12 +77,9 @@ main {
         fill: #007acc;
     }
 }
-.Posts {
+.TagList {
     list-style-type: none;
     padding: 0;
-    &:not(:first-child) {
-        margin-top: 0;
-    }
 }
 .Email {
     &::before {

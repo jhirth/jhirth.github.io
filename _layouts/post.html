@@ -2,7 +2,6 @@
 layout: default
 ---
 {% assign post = page %}
-
 {% if post.tags.size > 0 %}
   {% capture meta %} on {% endcapture %}
   {% for post_tag in post.tags %}
@@ -14,7 +13,6 @@ layout: default
     {% endif %}
   {% endfor %}
 {% endif %}
-
 <header class="PostHeader">
     <h1>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | remove_last: 'const' }}</h1>
     <p class="meta">
@@ -22,5 +20,4 @@ layout: default
         <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%Y-%m-%d" }}</time>
     </p>
 </header>
-
 {{ content }}
