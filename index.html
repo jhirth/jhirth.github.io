@@ -16,18 +16,18 @@ layout: default
         {% assign tag = site.my_tags | where: "slug", post_tag %}
         {% if tag %}
           {% assign tag = tag[0] %}
-          {% capture meta_temp %}{{ meta }}<a href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+          {% capture meta_temp %}{{ meta }}<a href="{{ tag.url }}">{{ tag.title }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
           {% assign meta = meta_temp %}
         {% endif %}
       {% endfor %}
     {% endif %}
-    <div class="PostHeader _excerpt">
+    <header class="PostHeader _excerpt">
       <h2><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h2>
       <p class="meta">
         {{ meta }}
         <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
       </p>
-    </div>
+    </header>
     {{ post.excerpt }}
     {% if post.excerpt.size < post.content.size %}
       {% assign excerpt_words = post.excerpt | number_of_words %}

@@ -1,4 +1,4 @@
 ---
 slug: gamedev
-name: Gamedev
+title: Gamedev
 ---

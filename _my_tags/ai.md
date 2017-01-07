@@ -1,4 +1,4 @@
 ---
 slug: ai
-name: AI
+title: AI
 ---

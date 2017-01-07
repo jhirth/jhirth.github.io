@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-
-<h1>Articles on {{ page.name }}</h1>
-
+<h1>Articles on {{ page.title }}</h1>
 {% if site.tags[page.slug] %}
   {% for post in site.tags[page.slug] %}
     {% capture post_year %}{{ post.date | date: '%Y' }}{% endcapture %}
@@ -17,25 +15,24 @@ layout: default
         <h2>{{ post_year }}</h2>
       {% endif %}
     {% endunless %}
-
     {% if post.tags.size > 0 %}
       {% capture meta %} on {% endcapture %}
       {% for post_tag in post.tags %}
         {% assign tag = site.my_tags | where: "slug", post_tag %}
         {% if tag %}
           {% assign tag = tag[0] %}
-          {% capture meta_temp %}{{ meta }}<a href="{{ tag.url }}">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+          {% capture meta_temp %}{{ meta }}<a href="{{ tag.url }}">{{ tag.title }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
           {% assign meta = meta_temp %}
         {% endif %}
       {% endfor %}
     {% endif %}
-    <div class="PostHeader _list">
+    <header class="PostHeader _list">
       <h3><a href="{{ post.url }}">{{ post.title | markdownify | remove: '<p>' | remove: '</p>' }}</a></h3>
       <p class="meta">
         {{ meta }}
         <time datetime="{{ post.date | date: "%Y-%m-%d" }}">{{ post.date | date: "%Y-%m-%d" }}</time>
       </p>
-    </div>
+    </header>
   {% endfor %}
 {% else %}
   <p>There are no posts with this tag.</p>

@@ -130,21 +130,32 @@ body {
     }
 }
 @media(min-width: 768px) {
-    a._home {
+    .Up {
         border-left: 0;
     }
 }
+
 // Rouge adds a wrapper div.
 .highlighter-rouge:not(:first-child) {
     margin-top: 1rem;
 }
+
+// For quick class identification.
 // .highlight span::after { display: inline; content: '[' attr(class) ']' }
-code {
-    .k, .kc, .kd, .kr { color: #b000db }
-    .s { color: #1f0fff }
-    .n, .na, .nb { color: #001080 }
-    .s1, .s2, .sr, .nd, .nt { color: #a31523 }
-    .m, .mi { color: #09885a }
-    .c, .c1, .cm { color: #008000 }
-    .nl { color: #f00 }
+
+// Only Rouge uses this kind of silly class names. No need to be more specific.
+.k, .kc, .kd, .kr { color: #b000db }
+.s { color: #1f0fff }
+.n, .na, .nb { color: #001080 }
+.s1, .s2, .sr, .nd, .nf, .nt { color: #a31523 }
+.m, .mi { color: #09885a }
+.c, .c1, .cm { color: #008000 }
+.nl { color: #f00 }
+
+// Heading fragment links.
+[id] > a {
+    display: none;
+}
+[id]:hover > a {
+    display: inline;
 }
