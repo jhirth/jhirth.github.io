@@ -1,5 +1,5 @@
 ---
-title: Minimalistic Header Fragment Links with Jekyll
+title: Quick & Easy Header Fragment Links for Jekyll-Powered Sites
 tags: [javascript, jekyll, css]
 ---
 
@@ -7,7 +7,7 @@ Github and many other sites show a link to a particular section when you hover a
 
 Kramdown, the Markdown parser which is generally used by Jekyll and thus on Github Pages, already does most of the work. It "slugifies" the heading's text and adds it as "id" attribute to the heading tag. This means you could already jump there via fragment links.
 
-All that's missing is some JS and CSS for giving users direct access to these fragment links. Of course this kind of thing has been done before, but I wanted something just as minimalistic as this blog's design. There is no need for fancy icons&nbsp;&ndash; a simple '#' will do. Furthermore, I don't care about older browsers, which means I can cut it down even more.
+All that's missing is some JS and CSS for giving users direct access to these fragment links. Of course this kind of thing has been done before, but I wanted something just as minimalist as this blog's design. There is no need for fancy icons&nbsp;&ndash; a simple '#' will do. Furthermore, I don't care about older browsers, which means I can cut it down even more.
 
 
 ## In brief
