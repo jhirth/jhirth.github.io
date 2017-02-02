@@ -14,7 +14,7 @@ layout: default
   {% endfor %}
 {% endif %}
 <header class="PostHeader">
-    <h1>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' | remove_last: 'const' }}</h1>
+    <h1>{{ page.title | markdownify | remove: '<p>' | remove: '</p>' }}</h1>
     <p class="meta">
         {{ meta }}
         <time datetime="{{ page.date | date: "%Y-%m-%d" }}">{{ page.date | date: "%Y-%m-%d" }}</time>
