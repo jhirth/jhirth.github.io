@@ -5,9 +5,6 @@ html, body {
 html {
     font-size: 18px;
 }
-img {
-    max-height: initial;
-}
 body {
     box-sizing: border-box;
     max-width: 800px;
@@ -144,11 +141,11 @@ body {
 // .highlight span::after { display: inline; content: '[' attr(class) ']' }
 
 // Only Rouge uses this kind of silly class names. No need to be more specific.
-.k, .kc, .kd, .kr { color: #b000db }
+.k, .kc, .kd, .kr, .kt { color: #b000db }
 .s { color: #1f0fff }
-.n, .na, .nb, .gs, .gt { color: #001080 }
+.n, .nb, .nc, .gs, .gt { color: #001080 }
 .s1, .s2, .sr, .nd, .nf, .nt, .gh, .gu, .sb { color: #a31523 }
-.m, .mi { color: #09885a }
+.m, .mf, .mi { color: #09885a }
 .c, .c1, .cm { color: #008000 }
 .nl { color: #f00 }
 .gh, .gu, .gs { font-weight: bold }
@@ -159,5 +156,8 @@ body {
     display: none;
 }
 [id]:hover > a {
+    display: inline;
+}
+.emoji {
     display: inline;
 }
