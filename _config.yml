@@ -17,7 +17,6 @@ gems:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
-  - jemoji
 
 permalink: /:year-:month-:day/:slug
 paginate: 5

@@ -7,7 +7,7 @@ When it comes to nice-looking layouts, effective whitespace usage is key. There 
 Of course, your whitespace usage should be consistent across all pages. All of your building blocks should behave in the same predictable manner. It shouldn't matter in which order they are put into containers. Conveniently for us, CSS makes this fairly easy if we follow some self-imposed rules.
 
 
-If you're aware of the *Contrast, Repetition, Alignment, Proximity* (:poop:) rules, you've probably already guessed that this is all about *proximity* (or the lack thereof) and *repetition* (aka consistency). We'll achieve these two goals by handling all the intercomponent spacing in the same generic manner and letting our containers take care of their padding.
+If you're aware of the _**C**ontrast, **R**epetition, **A**lignment, **P**roximity_ rules, you've probably already guessed that this is all about *proximity* (or the lack thereof) and *repetition* (aka consistency). We'll achieve these two goals by handling all the intercomponent spacing in the same generic manner and letting our containers take care of their padding.
 
 There are two ways to go about this: You can either give all of your building blocks a bottom margin except for the last child&nbsp;&ndash; or&nbsp;&ndash; you can give them a top margin except for the first child. We'll go with the latter.
 
@@ -15,7 +15,7 @@ There are two ways to go about this: You can either give all of your building bl
 
 Using top margins makes more sense because it allows more significant elements, like headings and bigger widgets, to push themselves further away. For example, you might want to separate a heading from the previous paragraph and use little spacing between that headline and the next paragraph to group them. Headings logically belong to the paragraphs which follow, that's why it makes sense to visually group them into distinct sections:
 
-![visual grouping of elements]({{ '/assets/images/2017-02-06-grouping.svg' | absolute_url }})
+![visual grouping of elements]({{ '/assets/images/2017-02-10-grouping.svg' | absolute_url }})
 
 Since we made an exception for the first child, there is no superfluous margin at the very top. The container which houses those elements will now always have the padding you've asked for.
 
