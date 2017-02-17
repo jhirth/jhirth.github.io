@@ -52,4 +52,4 @@ In Dart's early days, when the Dart Editor was still a thing, there was the trem
 
 Basic syntax highlighting is great, but this kind of smart highlighting gave your reading comprehension a nice boost. Getting immediate access to this elaborately acquired information felt like brain augmentation.
 
-Since code is read far more often than it's written, anything which immediately gives you a clearer picture is a welcome improvement. Anything which gets the relevant parts of your codebase quicker or more accurately into your brain is worth exploring. Fully grasping the current situation is always the first step. Optimizing this is certainly worth it.
+Since code is read far more often than it's written, anything which immediately gives you a clearer picture is a welcome improvement. Anything which gets the relevant parts of your codebase quicker or more accurately into your brain is worth exploring. Whenever you want to add a feature or fix a bug, fully grasping the current situation is always the first step. Optimizing this is certainly worth it.
