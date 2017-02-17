@@ -19,6 +19,10 @@ Using top margins makes more sense because it allows more significant elements, 
 
 Since we made an exception for the first child, there is no superfluous margin at the very top. The container which houses those elements will now always have the padding you've asked for.
 
+Hover this login mockup to visualize the padding of the container and the margins of the rows:
+
+<iframe height="400" src="{{ '/assets/images/2017-02-10-login.svg' | absolute_url }}"></iframe>
+
 ## Example CSS
 
 I'll only do it here for `<h1>` and paragraphs to give you a general idea how it can be done:
@@ -74,9 +78,11 @@ p {
 }
 ```
 
-## Beware of invisible elements
+## Beware of hidden elements
 
-This may come as a surprise, but `<script>` and `<style>` tags count as children. They are regular elements in the DOM which can be selected and styled like any other element. So, if there is some script at the very top of some container, that script element will be the first child, which means that whatever block which follows will have a top margin.
+This may come as a surprise, but `script` and `style` elements count as children. They are regular DOM elements which can be selected and styled like any other element. They merely got their `display` property set to `none` by the default stylesheet.
+
+So, if there is some script at the very top of some container, that script element will be the first child, which means that whatever block which follows will have a top margin.
 
 If you can't explain where some margin is coming from, check if the DOM does indeed look as you assumed.
 
@@ -98,4 +104,4 @@ Some people use the so-called "[lobotomized owl selector](http://alistapart.com/
 
 I'm not a fan of undoing things, because, when you look at one of those property-value pairs, you can't really tell where that previous value was set or if it's still there. I try to avoid things which have the potential to become useless cruft in the future. I'd rather have a bit of repetition and let compression take care of the redundancy.
 
-The owl doesn't help much anyways. You have to undo it in some places and override the margin in others. Unsurprisingly, it's also affected by invisible elements in the exact same way as more explicit selectors.
+The owl doesn't help much anyways. You have to undo it in some places and override the margin in others. Unsurprisingly, it's also affected by hidden elements in the exact same way as more explicit selectors.
